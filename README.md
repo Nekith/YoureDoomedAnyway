@@ -2,13 +2,14 @@
 
 Mix between Mario Galaxy (2007), Battlezone (1980) and Tetrisphere (1997).
 
+## Guidelines
+
+Cartoonish rendering, please.
+
 ## Todo
 
-* Change level
+* Spawn rocks
+* Spawn TNT
+* Change level (boom)
 
-* Tank model on blender
-* Objects textures
-* Exposure
-* Fix gravity force
-
-* Space decoration (stars and stuff)
+* Mob spawn : errant dog

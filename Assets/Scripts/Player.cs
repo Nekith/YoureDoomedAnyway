@@ -5,13 +5,28 @@ public class Player : MonoBehaviour
 {
 	public float translateSpeed = 50.0f;
 	public float rotateSpeed = 7.0f;
-	public float hoverEffect = 6.0f;
+	public float hoverEffect = 5.0f;
+	public int energy = 10;
+	public int exposure = 0;
+
 	private SphereCollider planet;
 	private int fireCooldown = 0;
 
 	void Start()
 	{
 		planet = GameObject.FindGameObjectWithTag("Planet").GetComponent<SphereCollider>();
+	}
+
+	void Update()
+	{
+		if (exposure >= 100) {
+			Application.LoadLevel("Menu");
+		}
+		if (energy == 0) {
+			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Light>().enabled = false;
+		} else {
+			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Light>().enabled = true;
+		}
 	}
 
 	void FixedUpdate()
@@ -25,13 +40,14 @@ public class Player : MonoBehaviour
 		if (fireCooldown > 0) {
 			--fireCooldown;
 		}
-		if (Input.GetButton("Fire") == true && fireCooldown == 0) {
+		if (Input.GetButton("Fire") == true && fireCooldown == 0 && energy > 0) {
 			Transform cannon = transform.FindChild("Cannon");
 			GameObject projectile = Instantiate(Resources.Load("Prefabs/FriendlyProjectile"),
 			                                    cannon.position + cannon.TransformDirection(Vector3.up) * 1.5f,
 			                                    cannon.rotation * Quaternion.Euler(0, 0, -90)) as GameObject;
 			projectile.transform.parent = planet.transform;
 			fireCooldown = 40;
+			--energy;
 		}
 	}
 
