@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
 	private SphereCollider planet;
 	private int fireCooldown = 0;
+	private int exposureCooldown = 0;
 
 	void Start()
 	{
@@ -19,6 +20,12 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
+		if (exposureCooldown > 0) {
+			--exposureCooldown;
+		} else {
+			++exposure;
+			exposureCooldown = 90;
+		}
 		if (exposure >= 100) {
 			Application.LoadLevel("Menu");
 		}
