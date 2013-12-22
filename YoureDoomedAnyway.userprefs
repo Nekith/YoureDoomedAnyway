@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HUD.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menu.cs" Line="23" Column="54" />
-      <File FileName="Assets\Scripts\Player.cs" Line="27" Column="26" />
-      <File FileName="Assets\Scripts\HUD.cs" Line="12" Column="35" />
+      <File FileName="Assets\Scripts\HUD.cs" Line="23" Column="52" />
+      <File FileName="Assets\Scripts\Menu.cs" Line="22" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
